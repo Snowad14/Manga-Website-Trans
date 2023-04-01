@@ -1,0 +1,1 @@
+(Fork of https://github.com/zyddnys/manga-image-translator)
