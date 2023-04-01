@@ -34,3 +34,8 @@
 1. Upload a manga chapter to the "Add" section of the website
 2. Click the "Add Chapter" button by choosing a manga previously added
 3. Enjoy your translated manga!
+
+## Screenshots
+
+![Discover section](https://i.imgur.com/Utf6bef.png)
+![Reader](https://i.imgur.com/yakwB5l.png)
