@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: rgb(65,65,65);
+    background: linear-gradient(90deg, rgba(65,65,65,1) 5%, rgba(79,77,80,0.9976365546218487) 25%, rgba(102,117,131,1) 44%, rgba(154,144,144,1) 95%);
+}
+
+header {
+    background-color: #F6B352;
+    color: #FFF;
+    text-align: center;
+    padding: 30px 0;
+}
+
+nav a {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    color: #FFF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #F6B352;
+}
+
+.active {
+    background-color: #F6B352;
+}

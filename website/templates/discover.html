@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% set Discover = 'active' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='discover.css') }}">
+
+    <div class="container">
+        <div class="row">
+          {% for manga in mangas %}
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 bg-secondary">
+            <a href="/manga/{{ manga.id }}" style="color: inherit; text-decoration: inherit;">
+              <img src="{{ manga.cover }}" alt="{{ manga.name }}" class="card-img-top ">
+              <div class="card-body">
+                <h3 class="card-title text-truncate">{{ manga.name }}</h3>
+                <p class="card-text text-truncate"><strong>Author : </strong>{{ manga.author }}</p>
+                <p class="card-text text-truncate"><strong>Description : </strong> {{ manga.description }}</p>
+              </div>
+            </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
+

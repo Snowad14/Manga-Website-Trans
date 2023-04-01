@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='reader.css') }}">
+    
+    <script>
+        function adjustFontSize(boxId) {
+            const box = document.getElementById(boxId);
+            const text = box.querySelector("p");
+        
+            let fontSize = 1; // Initial font size in em
+            box.style.fontSize = fontSize + "em";
+        
+            // Adjust font size until it fits the box
+            while (text.scrollHeight > box.clientHeight || text.scrollWidth > box.clientWidth) {
+                fontSize -= 0.1;
+                box.style.fontSize = fontSize + "em";
+            }
+        }
+
+    </script>
+    
+    {% for page in pages %}
+        <div class="image-container">
+            <img src="{{page.img_url}}" referrerpolicy="no-referrer" id="image-{{ page.id }}">
+            {% for box in page.bounding_box %}
+                {% set width = box.x2 | int - box.x | int %}
+                {% set height = box.y2 | int - box.y | int %}
+                <div class="box" style="position: absolute; top: {{box.y}}px; left: {{box.x}}px; width: {{width}}px; height: {{height}}px;">
+                    <p>{{box.translated_en_text}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='discover.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='chapter.css') }}">
+    <CENTER> <h1>All chapters of the manga : {{ manga.name }}</h1> </CENTER>
+
+    <br>
+    <div class="container">
+        <div class="row flex-column d-flex align-items-center">
+            {% for chapter in chapters %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="chapter card border-0 rounded-lg text-center">
+                        <a href="/reader/{{ manga.id }}/{{ chapter.chapter_index }}" style="color: inherit; text-decoration: inherit;" class="card-body d-block p-3">
+                            <h5 class="card-title mb-0">Chapter {{ chapter.chapter_index }}</h5>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.box {
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 1em;
+    overflow-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
